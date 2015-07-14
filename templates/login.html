@@ -1,0 +1,14 @@
+{% extends "template.html"%}
+{% block content %}
+	<h3>Login Below</h3>
+	<br/>
+	<form action="" method="post">
+		Username:<input type="text" placeholder="Username" name="username" value="{{request.form.username}}">
+		<br/>
+		Password:<input type="password" placeholder="Password" name="password" value="{{request.form.password}}">
+		<input cls="btn btn-default" type="submit" value="Login"> 
+	</form>
+	{% if error %}
+	<p class="error"><b>Error:</b>{{error}}</p>
+	{% endif %}
+{%endblock%}
