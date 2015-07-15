@@ -1,0 +1,69 @@
+<nav id="navigation">
+    <div class="container">
+        <ul class="navlinks">
+          <li><a href="home">Home</a></li>
+          <li><a href="welcome">About Us</a></li>
+          <li><a href="login">Log-In</a></li> 
+          <li><a href="register">Sign-Up</a></li> 
+        </ul>
+      </div>
+  </nav>
+<h3>Add Your Contacts</h3>
+<br>
+<form class="form-message" role="form" method="post" action="/">
+  {{ form.csrf_token }}
+  <p>
+    {{ form.name(placeholder="Name") }}
+    <span class="error">
+      {% if form.name.errors %}
+        {% for error in form.name.errors %}
+          {{ error }}
+        {% endfor %}
+      {% endif %}
+    </span>
+  </p>
+  <p>
+  {{ form.phone(placeholder="Phone") }}
+    <span class="error">
+
+      {% if form.phone.errors %}
+        {% for error in form.phone.errors %}
+          {{ error }}
+        {% endfor %}
+      {% endif %}
+    </span>
+  </p>
+  <p>
+  {{ form.sex(placeholder="Sex") }}
+    <span class="error">
+
+      {% if form.sex.errors %}
+        {% for error in form.sex.errors %}
+          {{ error }}
+        {% endfor %}
+      {% endif %}
+    </span>
+  </p>
+  <p>
+  {{ form.add(placeholder="Address") }}
+    <span class="error">
+
+      {% if form.add.errors %}
+        {% for error in form.add.errors %}
+          {{ error }}
+        {% endfor %}
+      {% endif %}
+    </span>
+  </p>  
+  <p>  
+  {{ form.rel(placeholder="Relationship") }}
+  <span class="error">
+
+    {% if form.rel.errors %}
+      {% for error in form.rel.errors %}
+        {{ error }}
+      {% endfor %}
+    {% endif %}
+  </span>
+  <button class="btn btn-sm btn-success" type="submit">Add</button>
+</form>

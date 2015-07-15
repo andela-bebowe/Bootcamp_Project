@@ -1,5 +1,18 @@
 {% extends "template.html"%}
 {% block content %}
-	<h3>Welcome, To Your Contact List Server.</h2>
-	<p>Click<a href="logout">here</a>to logout.</p>
+	<nav id="navigation">
+	  <div class="container">
+	      <ul class="navlinks">
+	        <li ><a href="#">Home</a></li>
+	        <li class="active"><a href="#">About Us</a></li>
+	        <li><a href="login">Log-In</a></li> 
+	        <li><a href="register">Sign-Up</a></li> 
+	      </ul>
+	    </div>
+	</nav>
+	<div class="jumbotron">
+		<h2>Welcome, To Your Contact List Server.</h2>
+		<p>Contacts on your list</p>
+	</div>
+	<div>	
 {%endblock%}
