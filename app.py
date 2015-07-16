@@ -6,14 +6,10 @@ from flask.ext.login import login_required, current_user
 from models import *
 from forms import *
 import os
-#import sqlite3
+
 #creating application object
 app = Flask(__name__)
-app.secret_key = "cftvgybhnjmk"
 app.config.from_object(os.environment['APP_SETTINGS'])
-#app.config.from_object('config.TestConfig')
-#app.config.from_object("config.BaseConfig")
-#app.config.from_object("config.DevelopmentConfig")
 
 db = SQLAlchemy(app)
 
@@ -97,9 +93,6 @@ def logout():
 	logout_user()
 	flash("You have logged out")
 	return  redirect(url_for('home'))
-
-#def connect_db():
-#	return sqlite3.connect(app.database)
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
