@@ -1,5 +1,5 @@
 from app import db
-import bcrypt
+#from app import bcrypt
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
 
@@ -37,7 +37,8 @@ class User(db.Model):
     def __init__(self, name, email, password):
         self.name = name
         self.email = email
-        self.password = bcrypt.generate_password_hash(password)
+        #self.password = bcrypt.generate_password_hash(password)
+        self.password = password
 
     def is_authenticated(self):
         return True

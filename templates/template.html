@@ -3,16 +3,15 @@
 <head>
 	<title>Contacts_Dict</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" text="text/css" href="/static/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/static/style.css">
-	<link rel="stylesheet" text="text/css" href="/static/bootstrap.min.js.css">
 </head>
 <body>
-	<div class="container">
 		{% block content %}
 		{% endblock %}
 		{% for message in get_flashed_messages()%}
 			{{message}}
 		{% endfor %}
-	</div>
+	
 </body>
 </html>
